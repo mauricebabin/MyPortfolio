@@ -2,64 +2,15 @@ import datetime
 import math
 import FormatValues as FV
 import matplotlib.pyplot as plt
-from matplotlib import style
 
 
-ToDo = ["Study, study and study some more."]
-'''
-print(ToDo)
-print(ToDo[1])
+x = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"]
+y = []
 
-TaskNum = 1
-for Task in ToDo:
-    print(f" {TaskNum}. {Task}")
-    TaskNum += 1
+for months in range(1,13):
+    MonthSales = input("Enter month sales for " + x[months - 1] + ": ")
+    y.append(MonthSales)
 
-NewTask = input("Enter a new task: ")
-ToDo.append(NewTask)
-
-TaskNum = 1
-for Task in ToDo:
-    print(f" {TaskNum}. {Task}")
-    TaskNum += 1
-
-print()
-DelItem = int(input("What item do you want to delete: "))
-ToDo.__delitem__(DelItem - 1)
-
-if len(ToDo) != 0:
-    TaskNum = 1
-    for Task in ToDo:
-        print(f" {TaskNum}. {Task}")
-        TaskNum += 1
-else:
-    print("ToDo list is currently empty.")
-
-while True:
-    NewTask = input("Enter a new task (END to quit): ")
-    if NewTask.upper() == "END":
-        break
-    else:
-        ToDo.append(NewTask)
-
-if len(ToDo) != 0:
-    TaskNum = 1
-    for Task in ToDo:
-        print(f" {TaskNum}. {Task}")
-        TaskNum += 1
-else:
-    print("ToDo list is currently empty.")
-'''
-
-t = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-s = [200, 100, 600, 300, 200, 400, 250]
-
-plt.plot(t, s)
-
-plt.xlabel('time (s)')
-plt.ylabel('voltage (mV)')
-
-plt.title('Sine Wave')
-plt.grid(True)
-
+plt.title("Monthly Sales Over The Past 12 Months ")
+plt.plot(x,y)
 plt.show()
